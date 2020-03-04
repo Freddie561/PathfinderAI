@@ -13,4 +13,15 @@ class cBotRandom : public cBotBase
 	virtual void ChooseNextGridPosition();
 };
 
+class cBotSimple : public cBotBase
+{
+	virtual void ChooseNextGridPosition();
+};
+class cBotSimple2 : public cBotBase
+{
+	virtual void ChooseNextGridPosition();
+	int CurrentDirectionX;
+	int CurrentDirectionY;
+};
+
 
