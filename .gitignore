@@ -13,6 +13,7 @@
 
 .vis\
 Debug
+SDL2-2.0.10
 
 # Compiled Dynamic libraries
 *.so
@@ -33,3 +34,6 @@ Debug
 *.exe
 *.out
 *.app
+.vs/PathFinderCpp/v16/.suo
+*.db
+*.ipch
