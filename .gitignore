@@ -11,7 +11,7 @@
 *.gch
 *.pch
 
-.vis
+.vis\
 Debug
 
 # Compiled Dynamic libraries
