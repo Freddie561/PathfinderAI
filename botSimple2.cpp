@@ -12,59 +12,29 @@ void cBotSimple2::ChooseNextGridPosition()
 		
 		if (gTarget.PositionX() > PositionX()) 
 		{
-
-			if (gLevel.isValid(PositionX() + 1, PositionY())) 
+			if (gLevel.isValid(PositionX() + 1, PositionY()))
 			{
 				run = SetNext((PositionX() + 1), (PositionY()), gLevel);
-			}
-			
-			if (gLevel.isValid(PositionX(), PositionY() -1 ))
-			{
-				run = SetNext((PositionX()), (PositionY() -1 ), gLevel);
-			}
-			else 
-			{
-				run = SetNext((PositionX()), (PositionY() + 1), gLevel);
-			}
-			
-		}
-		else if (gTarget.PositionX() < PositionX())//this is never called - likely needs to use the global variables of current direction in bots.h
-		{
-			if (gLevel.isValid(PositionX() - 1, PositionY())) 
-			{
-				run = SetNext((PositionX() - 1), (PositionY()), gLevel);
 			}
 			else
 			{
-				run = SetNext((PositionX()), (PositionY() - 1), gLevel);
+				run = SetNext((PositionX()), (PositionY()-1), gLevel);
 			}
+
 		}
-		else if (gTarget.PositionY() > PositionY())
+		else if (gTarget.PositionX() < PositionX()) run = SetNext((PositionX() - 1), (PositionY()), gLevel);
+		else if (gTarget.PositionY() > PositionY()) 
 		{
-			if (gLevel.isValid(PositionX(), PositionY() + 1)) 
-			{
+			if (gTarget.PositionY() > PositionY()) {
 				run = SetNext((PositionX()), (PositionY() + 1), gLevel);
 			}
 			else 
 			{
-				run = SetNext((PositionX() - 1), (PositionY()), gLevel);
-			}
-		
-		}
-
-		else if (gTarget.PositionY() < PositionY())
-		{
-			if (gLevel.isValid(PositionX(), PositionY() - 1))
-			{
 				run = SetNext((PositionX()), (PositionY() - 1), gLevel);
 			}
-			else 
-			{
-				run = SetNext((PositionX() + 1), (PositionY()), gLevel);
-			}
+
 		}
-	
-		
+		else if (gTarget.PositionY() < PositionY()) run = SetNext((PositionX()), (PositionY() - 1), gLevel);
 		else run = (gTarget.PositionX() == PositionX() || gTarget.PositionY() == PositionY());
 	}
 }
