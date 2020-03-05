@@ -13,7 +13,6 @@
 
 .vis\
 Debug
-SDL2-2.0.10
 
 # Compiled Dynamic libraries
 *.so
