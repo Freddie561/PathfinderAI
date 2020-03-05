@@ -26,5 +26,22 @@ class cBotSimple3 : public cBotBase
 	int CurrentDirectionX;
 	int CurrentDirectionY;;
 };
+class cDijkstra : public cBotBase
+{
+	virtual void ChooseNextGridPosition();
+	bool closed[GRIDWIDTH][GRIDHEIGHT]; //whether or not location is closed
+	float cost[GRIDWIDTH][GRIDHEIGHT]; //cost value for each location
+	int linkX[GRIDWIDTH][GRIDHEIGHT]; //link X coord for each location
+	int linkY[GRIDWIDTH][GRIDHEIGHT];; //link Y coord for each location
+	bool inPath[GRIDWIDTH][GRIDHEIGHT];	//whether or not a loction is in the final path
+
+	bool completed;
+	cDijkstra() {
+		completed = false;
+	}
+
+	virtual void Build(cBotBase& bot);
+
+};
 
 
